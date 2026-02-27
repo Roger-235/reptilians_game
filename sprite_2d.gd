@@ -11,11 +11,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var anim = $AnimatedSprite2D
 
-enum State { IDLE, START_RUN, RUN, JUMP, SWING, LAUNCH }
+enum State { IDLE, START_RUN, RUN, JUMP, SWING, LAUNCH, DEAD }
 var state = State.IDLE
 
 const COYOTE_FRAMES = 4
 var off_floor_frames = 0
+
+var spawn_position: Vector2
+var spawn_camera_name: String = "level0"  # 出生點對應的鏡頭
 
 # 舌頭與繩索陣列
 var tongue_anchor: Vector2 = Vector2.ZERO
@@ -26,7 +29,9 @@ var rope_rids: Array[RID] = []      # 每個折點所在牆壁的 RID（用於�
 
 func _ready():
 	floor_snap_length = 8.0
+	spawn_position = global_position
 	anim.sprite_frames.set_animation_loop("start_run", false)
+	anim.sprite_frames.set_animation_loop("dead", false)
 	anim.animation_finished.connect(_on_animation_finished)
 
 	# 建立舌頭的線段
@@ -38,9 +43,31 @@ func _ready():
 	tongue_line.visible = false
 	add_child(tongue_line)
 
+func _die():
+	if state == State.DEAD:
+		return
+	# 放開舌頭
+	tongue_line.visible = false
+	rope_points.clear()
+	rope_rids.clear()
+	velocity = Vector2.ZERO
+	_set_state(State.DEAD)
+	# 等死亡動畫播完再復活（由 _on_animation_finished 接手）
+
+func _respawn():
+	global_position = spawn_position
+	velocity = Vector2.ZERO
+	_set_state(State.IDLE)
+	# 切回出生點的鏡頭
+	for child in get_parent().get_children():
+		if child is Camera2D:
+			child.enabled = (child.name == spawn_camera_name)
+
 func _on_animation_finished():
 	if state == State.START_RUN:
 		_set_state(State.RUN)
+	elif state == State.DEAD:
+		_respawn()
 
 func _set_state(new_state: State):
 	state = new_state
@@ -54,8 +81,12 @@ func _set_state(new_state: State):
 		State.JUMP, State.SWING, State.LAUNCH:
 			if anim.sprite_frames.has_animation("jump"):
 				anim.play("jump")
+		State.DEAD:
+			anim.play("dead")
 
-func _unhandled_input(event):
+func _input(event):
+	if state == State.DEAD:
+		return
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			_shoot_tongue()
@@ -95,6 +126,11 @@ func _release_tongue():
 	_set_state(State.LAUNCH)  # 飛出去，暫時不能移動
 
 func _physics_process(delta):
+	if state == State.DEAD:
+		velocity.y += gravity * delta
+		move_and_slide()
+		return
+
 	# 這裡的 "ui_left" 和 "ui_right" 只要你在專案設定有綁定 A 和 D 就可以用
 	var direction = Input.get_axis("ui_left", "ui_right")
 

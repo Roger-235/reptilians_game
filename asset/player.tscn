@@ -2,6 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://3k7r706qnbdt" path="res://asset/AnimationSheet.png" id="1_5f23e"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_op15v"]
+atlas = ExtResource("1_5f23e")
+region = Rect2(96, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b014b"]
+atlas = ExtResource("1_5f23e")
+region = Rect2(120, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0orgd"]
+atlas = ExtResource("1_5f23e")
+region = Rect2(144, 96, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31b8c"]
+atlas = ExtResource("1_5f23e")
+region = Rect2(168, 96, 24, 24)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5f23e"]
 atlas = ExtResource("1_5f23e")
 region = Rect2(24, 120, 24, 24)
@@ -60,6 +76,23 @@ region = Rect2(24, 48, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_31b8c"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op15v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b014b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0orgd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31b8c")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5f23e")
@@ -131,7 +164,7 @@ size = Vector2(12, 17)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1052885015]
 position = Vector2(-1, -3)
 sprite_frames = SubResource("SpriteFrames_31b8c")
-animation = &"idle"
+animation = &"dead"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1632137623]
 shape = SubResource("RectangleShape2D_5f23e")
