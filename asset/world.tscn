@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cvvs6fswwhyky"]
+
+[ext_resource type="Script" uid="uid://beq7d2f4hlba1" path="res://sprite_2d.gd" id="1_ty3an"]
+[ext_resource type="PackedScene" uid="uid://bd1b0ohaxmjaw" path="res://asset/player.tscn" id="2_pauju"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty3an"]
+size = Vector2(360.375, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pauju"]
+size = Vector2(11, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2p28"]
+size = Vector2(178.375, 8)
+
+[node name="world" type="Node2D" unique_id=1272138339]
+position = Vector2(-61, -33)
+
+[node name="player" parent="." unique_id=226805532 instance=ExtResource("2_pauju")]
+position = Vector2(-134, 4)
+script = ExtResource("1_ty3an")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2046237824]
+position = Vector2(-64, -51)
+metadata/_edit_group_ = true
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=706156091]
+position = Vector2(-176.1875, 84)
+shape = SubResource("RectangleShape2D_ty3an")
+debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=81306066]
+offset_left = -359.0
+offset_top = 64.0
+offset_right = 3.0
+offset_bottom = 105.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1439516852]
+position = Vector2(-58, 20)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=112202585]
+position = Vector2(90, -133)
+shape = SubResource("RectangleShape2D_pauju")
+debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=962935033]
+custom_minimum_size = Vector2(10, 1)
+offset_left = 84.0
+offset_top = -153.0
+offset_right = 95.0
+offset_bottom = -114.0
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=751981765]
+position = Vector2(-50, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=2145488527]
+position = Vector2(-13.8125, -177)
+shape = SubResource("RectangleShape2D_w2p28")
+debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=689257141]
+custom_minimum_size = Vector2(10, 1)
+offset_left = -104.0
+offset_top = -181.0
+offset_right = 76.0
+offset_bottom = -173.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1368842901]
+offset = Vector2(0, -50)
+zoom = Vector2(4, 4)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1050376687]
+position = Vector2(454, -52)
+metadata/_edit_group_ = true
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D4" unique_id=2070864561]
+position = Vector2(-176.1875, 84)
+shape = SubResource("RectangleShape2D_ty3an")
+debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4" unique_id=630834356]
+offset_left = -357.0
+offset_top = 63.0
+offset_right = 5.0
+offset_bottom = 104.0
