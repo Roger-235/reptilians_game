@@ -6,23 +6,32 @@
 [ext_resource type="Script" uid="uid://mwea1h8wqrnr" path="res://kill_zone.gd" id="4_w2p28"]
 [ext_resource type="Texture2D" uid="uid://ftifrbqpou07" path="res://asset/437KXZGX0V.png" id="5_xoki8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty3an"]
-size = Vector2(336.375, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eds1r"]
+size = Vector2(347.375, 40)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pauju"]
-size = Vector2(11, 38.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6jyr"]
+size = Vector2(11.25, 39)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2p28"]
 size = Vector2(180, 8)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pauju"]
+size = Vector2(11, 38.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ro5ea"]
 size = Vector2(9.5, 91.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty3an"]
+size = Vector2(338.375, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xoki8"]
 size = Vector2(270, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppmi0"]
-size = Vector2(23, 185)
+size = Vector2(27, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ds1v1"]
+size = Vector2(26, 194.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vport"]
 size = Vector2(4.75, 160.75)
@@ -31,7 +40,7 @@ size = Vector2(4.75, 160.75)
 size = Vector2(300, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otkx0"]
-size = Vector2(292, 20)
+size = Vector2(363, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7u6bs"]
 size = Vector2(265, 7)
@@ -57,8 +66,8 @@ position = Vector2(-66, -51)
 metadata/_edit_group_ = true
 
 [node name="floor" type="CollisionShape2D" parent="StaticBody2D" unique_id=706156091]
-position = Vector2(-176.1875, 84)
-shape = SubResource("RectangleShape2D_ty3an")
+position = Vector2(-170.6875, 84)
+shape = SubResource("RectangleShape2D_eds1r")
 debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D" unique_id=81306066]
@@ -72,15 +81,15 @@ position = Vector2(-59, 20)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=112202585]
-position = Vector2(90, -133)
-shape = SubResource("RectangleShape2D_pauju")
+position = Vector2(88.625, -133.5)
+shape = SubResource("RectangleShape2D_l6jyr")
 debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D2" unique_id=962935033]
 custom_minimum_size = Vector2(10, 1)
-offset_left = 84.0
+offset_left = 83.0
 offset_top = -153.0
-offset_right = 95.0
+offset_right = 94.0
 offset_bottom = -114.0
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=751981765]
@@ -259,20 +268,20 @@ offset_right = 169.0
 offset_bottom = -172.0
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=1415633120]
-position = Vector2(-527, 261)
+position = Vector2(-487, 259)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=1949605874]
-position = Vector2(91.5, -158.5)
+position = Vector2(52, -179)
 shape = SubResource("RectangleShape2D_ppmi0")
 debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D8" unique_id=1629981386]
 custom_minimum_size = Vector2(10, 1)
-offset_left = 79.0
-offset_top = -264.0
-offset_right = 106.0
-offset_bottom = -64.0
+offset_left = 39.0
+offset_top = -279.0
+offset_right = 66.0
+offset_bottom = -79.0
 
 [node name="StaticBody2D21" type="StaticBody2D" parent="." unique_id=154609394]
 position = Vector2(48, 457)
@@ -323,20 +332,20 @@ offset_right = 106.0
 offset_bottom = -64.0
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=112408552]
-position = Vector2(-527, 118)
+position = Vector2(-525, 125)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=969126370]
-position = Vector2(91.5, -158.5)
+position = Vector2(90.5, -158)
 shape = SubResource("RectangleShape2D_ppmi0")
 debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D5" unique_id=101009655]
 custom_minimum_size = Vector2(10, 1)
-offset_left = 79.0
-offset_top = -264.0
-offset_right = 106.0
-offset_bottom = -64.0
+offset_left = 77.0
+offset_top = -258.0
+offset_right = 104.0
+offset_bottom = -58.0
 
 [node name="StaticBody2D13" type="StaticBody2D" parent="." unique_id=1064384067]
 position = Vector2(-225, -67)
@@ -356,11 +365,10 @@ offset_bottom = -64.0
 
 [node name="StaticBody2D16" type="StaticBody2D" parent="." unique_id=376568522]
 position = Vector2(64, -63)
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D16" unique_id=1988536498]
-position = Vector2(91.5, -158.5)
-shape = SubResource("RectangleShape2D_ppmi0")
+position = Vector2(92, -161.25)
+shape = SubResource("RectangleShape2D_ds1v1")
 debug_color = Color(0.00191004, 0.0019567222, 0.00084434886, 0.41960785)
 
 [node name="ColorRect" type="ColorRect" parent="StaticBody2D16" unique_id=1866721738]
@@ -450,6 +458,7 @@ zoom = Vector2(4, 4)
 position = Vector2(-138, 0)
 script = ExtResource("3_porta")
 target_camera_name = "level1"
+trigger_direction = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_0to1" unique_id=9100002]
 position = Vector2(-6, -51)
@@ -459,6 +468,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(-152, 0)
 script = ExtResource("3_porta")
 target_camera_name = "level0"
+trigger_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_1to0" unique_id=9100004]
 position = Vector2(5, -51)
@@ -508,6 +518,7 @@ shape = SubResource("RectangleShape2D_hport")
 position = Vector2(138, 0)
 script = ExtResource("3_porta")
 target_camera_name = "level2"
+trigger_direction = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_1to2" unique_id=9100014]
 position = Vector2(11, -50)
@@ -517,6 +528,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(152, 0)
 script = ExtResource("3_porta")
 target_camera_name = "level1"
+trigger_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_2to1" unique_id=9100016]
 position = Vector2(-8, -51)
@@ -528,24 +540,17 @@ script = ExtResource("3_porta")
 target_camera_name = "egg1"
 trigger_direction = Vector2(0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_0toEgg1" unique_id=9100041]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_hport")
-
 [node name="Portal_Egg1to0" type="Area2D" parent="." unique_id=9100019]
 position = Vector2(-290, 27)
 script = ExtResource("3_porta")
 target_camera_name = "level0"
 trigger_direction = Vector2(0, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Egg1to0" unique_id=9100042]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_hport")
-
 [node name="Portal_Egg1toEgg2" type="Area2D" parent="." unique_id=9100021]
 position = Vector2(-138, 115)
 script = ExtResource("3_porta")
 target_camera_name = "egg2"
+trigger_direction = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Egg1toEgg2" unique_id=9100022]
 position = Vector2(-4, -6)
@@ -555,6 +560,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(-152, 115)
 script = ExtResource("3_porta")
 target_camera_name = "egg1"
+trigger_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Egg2toEgg1" unique_id=9100024]
 position = Vector2(4, -7)
@@ -564,6 +570,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(428, 0)
 script = ExtResource("3_porta")
 target_camera_name = "egg5"
+trigger_direction = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_2toEgg5" unique_id=9100026]
 position = Vector2(5, -50)
@@ -573,6 +580,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(442, 0)
 script = ExtResource("3_porta")
 target_camera_name = "level2"
+trigger_direction = Vector2(-1, 0)
 
 [node name="Portal_Egg2toLv3" type="Area2D" parent="." unique_id=9100029]
 position = Vector2(0, 202)
@@ -618,6 +626,7 @@ shape = SubResource("RectangleShape2D_hport")
 position = Vector2(-138, 280)
 script = ExtResource("3_porta")
 target_camera_name = "level3"
+trigger_direction = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Egg4toLv3" unique_id=9100038]
 position = Vector2(-4, -30)
@@ -627,6 +636,7 @@ shape = SubResource("RectangleShape2D_vport")
 position = Vector2(-152, 280)
 script = ExtResource("3_porta")
 target_camera_name = "egg4"
+trigger_direction = Vector2(-1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal_Lv3toEgg4" unique_id=9100040]
 position = Vector2(5, -30)
@@ -636,7 +646,7 @@ shape = SubResource("RectangleShape2D_vport")
 script = ExtResource("4_w2p28")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="dead" unique_id=1397614612]
-position = Vector2(579, 40)
+position = Vector2(614.5, 40)
 shape = SubResource("RectangleShape2D_otkx0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="dead" unique_id=1651281625]
@@ -692,9 +702,9 @@ text = "f向右d向左空白跳"
 [node name="Label5" type="Label" parent="." unique_id=355368613]
 offset_left = -132.0
 offset_top = -91.0
-offset_right = 44.0
+offset_right = 108.0
 offset_bottom = -68.0
-text = "跳起來按左鍵可以吐舌頭"
+text = "跳起來按左鍵會對滑鼠方向吐舌頭"
 
 [node name="Label6" type="Label" parent="." unique_id=1791542905]
 offset_left = -399.0
